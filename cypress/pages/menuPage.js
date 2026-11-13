@@ -17,6 +17,11 @@ class menuPage {
 
         cy.get(this.selectorsList().perFormanceButton).click()
        }
+
+       checkAccessMyInvalid() {
+        cy.get(this.selectorsList().wrongCredentialAlert)
+
+       }
 }
 
 

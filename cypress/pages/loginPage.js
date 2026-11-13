@@ -17,6 +17,10 @@ class LoginPage {
     cy.get(this.selectorsList().passwordField).type(password)
     cy.get(this.selectorsList().loginButton).click()
   }
+
+  checkAcessInvalid() {
+  cy.contains("Invalid credentials").should("be.visible");
+}
 }
 
 export default LoginPage

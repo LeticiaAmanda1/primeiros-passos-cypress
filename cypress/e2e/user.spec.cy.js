@@ -19,26 +19,26 @@ describe("Orange HRM Tests", () => {
  
 
   it('User Info Update - Success', () => {
-    loginPage.acessLoginPage();
+    loginPage.accessLoginPage();
 
     loginPage.loginWithAnyUser(
       userData.userSuccess.username,
       userData.userSuccess.password,
     );
 
-    dashboardPage.checkDashboardPage();
+    
     menuPage.accessMyInfo();
 
    myInfoPage.fillPersonalDetails(chance.first(), chance.last());
 
-myInfoPage.fillEmployeeDetails(
+  myInfoPage.fillEmployeeDetails(
   "EmployeeId",
   "OtherId",
   "Drivers Number",
   "2025-07-29"
 );
 
-myInfoPage.saveForm();
+ myInfoPage.saveForm();
 
     
 })

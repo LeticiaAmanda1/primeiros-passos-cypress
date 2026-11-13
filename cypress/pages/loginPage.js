@@ -8,13 +8,16 @@ class LoginPage {
     }
   }
 
-  acessLoginPage() {
+  accessLoginPage() {
     cy.visit('/web/index.php/auth/login')
   }
 
   loginWithAnyUser(username, password) {
-    cy.get(this.selectorsList().usernameField).type(username)
-    cy.get(this.selectorsList().passwordField).type(password)
+cy.get(this.selectorsList().usernameField, { timeout: 10000 })
+  .should("be.visible")
+  .type(username);    cy.get(this.selectorsList().passwordField, { timeout: 10000 })
+  .should("be.visible")
+  .type(password);
     cy.get(this.selectorsList().loginButton).click()
   }
 

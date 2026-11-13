@@ -1,28 +1,9 @@
-class menuPage {
-
-   selectorsList() {
-      const selectors = {
-         myInfoButton: '[href="/web/index.php/pim/viewMyDetails"]',
-         perFormanceButton: '[href="/web/index.php/performance/viewPerformanceModule"]',
-      }
-
-        return selectors
-    }
-       accessMyInfo(){
-        
-        cy.get(this.selectorsList().myInfoButton).click()
-       }
-
-       acessPerformance(){
-
-        cy.get(this.selectorsList().perFormanceButton).click()
-       }
-
-       checkAccessMyInvalid() {
-        cy.get(this.selectorsList().wrongCredentialAlert)
-
-       }
+class MenuPage {
+  accessMyInfo() {
+    cy.contains("a", /^My Info$/, { timeout: 10000 })
+      .should("be.visible")
+      .click();
+  }
 }
 
-
-export default menuPage 
+export default MenuPage;
